@@ -1,0 +1,11 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "editor.detectIndentation": false,
+  "editor.insertSpaces": true,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.fontSize": 12,
+  "editor.minimap.enabled": false,
+  "html.format.unformatted": "abbr, acronym, b, bdo, big, br, cite, code, dfn, em, kbd, map, object, pre, q, samp, small, strong, sub, sup, tt, var",
+  "search.usePCRE2": true
+}

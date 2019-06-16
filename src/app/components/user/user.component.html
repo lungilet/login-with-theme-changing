@@ -1,0 +1,62 @@
+<div [class.unicorn-dark-theme]="otherTheme" class="mat-app-background">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Admin Page</span>
+      <span class="align-center"></span>
+      <span class="spacer"></span>
+      <button (click)="changeThemes()" mat-raised-button color="primary">Change Theme</button>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon><i class="fa fa-bars"></i></mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>dialpad</mat-icon>
+          <span>Redial</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Check voicemail</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+        <button mat-menu-item (click)="login()">
+          <mat-icon>first_page</mat-icon>
+          <span>Sign Out</span>
+        </button>
+      </mat-menu>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <div class="container">
+    <div class="row padding-top">
+      <div class="col-lg-4 col-md-12 col-sm-12 col-xm-12">
+        <ol>
+          <li>
+            <mat-form-field class="full-width">
+              <input matInput [(ngModel)]="name" placeholder="enter your name">
+            </mat-form-field>
+          </li>
+          <li>
+            <button mat-raised-button (click)="openDialog()">compose a message</button>
+          </li>
+        </ol>
+
+        <div *ngIf="result">
+          <mat-card>
+            <div class="card-heading">Composed Message</div>
+            <div class="row">
+              <div class="col-12">
+                <div class="padding-left-and-right">
+                  <i><a href="mailto:email">from: {{result.email}}</a></i>
+                  <p [ngxSummernoteView]="result.msg"></p>
+                </div>
+              </div>
+            </div>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
